@@ -62,7 +62,7 @@ h3 {
 .nav-item a {
     background: transparent;
     border: 2px solid rgb(176, 202, 219);
-    color: #fff;
+    /*color: #fff;*/
     margin-top: 1em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
