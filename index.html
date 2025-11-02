@@ -11,138 +11,174 @@
 </head>
 <body>
     <div id="layout" class="pure-g">
-        <div class="content">
-            <header>
+        <!-- Sidebar -->
+        <div class="sidebar pure-u-1 pure-u-md-1-5">
+            <div class="header">
                 <h1 class="brand-title">HBO-ICT Boekenclub</h1>
-                <h2 class="brand-tagline">Een overzicht van onze bijeenkomsten en de boeken die we besproken hebben</p>
-            </header>
+                <h2 class="brand-tagline">Een overzicht van onze bijeenkomsten en de boeken die we besproken hebben</h2>
 
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="#book4">#5 Playground (NL: Vrij spel) (Richard Powers)</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#book4">#4 Stories of your Life and others (Ted Chiang)</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#book3">#3 The Mountain in the Sea (Ray Nayler)</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#book2">#2 Klara and the Sun (Kazuo Ishiguro)</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#book1">#1 2001: A Space Oddysey (Arthur C. Clarke)</a>
-                </li>
-            </ul>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#book5" class="pure-button">#5 Playground</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#book4" class="pure-button">#4 Stories of your Life</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#book3" class="pure-button">#3 Mountain in the Sea</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#book2" class="pure-button">#2 Klara and the Sun</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#book1" class="pure-button">#1 2001: A Space Odyssey</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 
+        <!-- Main Content -->
+        <div class="content pure-u-1 pure-u-md-4-5">
             <div class="posts">
-                <section class="post">
+                <section class="post" id="book5">
                     <header class="post-header">
-                        <a id="book5"></a>
                         <h3 class="post-title">#5 Playground (NL: Vrij spel) (Richard Powers)</h3>
                         <p class="post-meta">13 november 2025 bij Nienke in Winschoten</p>
                         <p class="post-meta">Aanwezig: ...</p>
                         <p class="post-meta">Oordeel over het boek: ...</p>
                     </header>
                     <div class="post-description">
-                        <p>...</p>
+                        <div class="post-preview">...</div>
+                        <div class="post-full" style="display: none;">
+                            <p>...</p>
+                        </div>
+                        <button class="toggle-btn" onclick="togglePost(this)">
+                            <span class="arrow">&#9660;</span>
+                            <span class="btn-text">Lees meer</span>
+                        </button>
                     </div>
                 </section>
 
-                <section class="post">
+                <section class="post" id="book4">
                     <header class="post-header">
-                        <a id="book4"></a>
                         <h3 class="post-title">#4 Stories of your Life and others (Ted Chiang)</h3>
                         <p class="post-meta">11 september 2025 bij Jan in Groningen</p>
                         <p class="post-meta">Aanwezig: Bart, Jan, Jolanda, Linda en Erik</p>
                         <p class="post-meta">Oordeel over het boek: <b>gematigd positief</b> (zie hieronder)</p>
                     </header>
                     <div class="post-description">
-                        <p>Onze vierde boek was een verhalenbundel. Een lastige vorm voor een boekenclub, omdat elk verhaal tijd kost om erin te komen.
-                        Immers bij een roman hoef je die "investering" maar één keer te doen.</p>
-                        <p>We zijn de verhalen in engszins willekeurige volgorde bij langs gegaan (dat is dan wel weer een voordeeld van een bundel).
-                        Elk verhaal riep wel associaties op met films en/of andere boeken, met als meest prominente voorbeeld <a href="https://www.imdb.com/title/tt2543164/" target="_blank">de film "Arrival"</a> die gebaseerd is op het titelverhaal.
-                        Het was interessant om te zien welke aanpassingen er gemaakt zijn om het gecompliceerde verhaal geschikt te maken voor het medium film.</p>
-                        <p>Elk verhaal is gebaseerd op een aanname, die vervolgens tot in de puntjes wordt uitgewerkt. En ondanks dat het <i>science fiction</i> wordt genoemd,
-                        kunnen die aannames heel anders en verrassend zijn: wat zou er bijvoorbeeld gebeuren als het verhaal over de Toren van Babel echt zou zijn?
-                        Of wat als de mensheid in de toekomst voorbij wordt gestreefd door genetisch verbeterde "meta-humans"? Of als engelen echt bestaan en je geloof op de proef stellen met wonderen en rampen?
-                        In sommige verhalen, zoals het titelverhaal, pakt dit heel goed uit. In andere minder, zoals het verhaal "72 letters" waarin een 19e-eeuws Engeland wordt geschetst
-                        waarin automata bestaan die "bezield" kunnen worden door ze een naam te geven
-                        (met een heel duidelijke link naar <a href="https://nl.wikipedia.org/wiki/Golem_(legende)" target="_blank">het verhaal van de Golem</a>).
-                        In dit laatste verhaal probeert Chiang (te) veel best wel complexe dingen te vertellen, wat de leesbaarheid en het leesplezier niet ten goede komt.
-                        Het is overigens bijzonder te noemen dat een auteur met een Taiwanees-Chinese achtergrond voor zoveel verhalen een oudtestamentisch of joods uitgangspunt neemt.</p>
-                        <p>Een gevarieerde bundel met superoriginele en -intelligente verhalen, waarvan sommige fantastisch uitpakken en andere minder.</p>
+                        <div class="post-preview">Onze vierde boek was een verhalenbundel. Een lastige vorm voor een boekenclub, omdat elk verhaal tijd kost om erin te komen. Immers bij een roman hoef je die "investering" maar één keer te doen...</div>
+                        <div class="post-full" style="display: none;">
+                            <p>Onze vierde boek was een verhalenbundel. Een lastige vorm voor een boekenclub, omdat elk verhaal tijd kost om erin te komen.
+                            Immers bij een roman hoef je die "investering" maar één keer te doen.</p>
+                            <p>We zijn de verhalen in engszins willekeurige volgorde bij langs gegaan (dat is dan wel weer een voordeeld van een bundel).
+                            Elk verhaal riep wel associaties op met films en/of andere boeken, met als meest prominente voorbeeld <a href="https://www.imdb.com/title/tt2543164/" target="_blank">de film "Arrival"</a> die gebaseerd is op het titelverhaal.
+                            Het was interessant om te zien welke aanpassingen er gemaakt zijn om het gecompliceerde verhaal geschikt te maken voor het medium film.</p>
+                            <p>Elk verhaal is gebaseerd op een aanname, die vervolgens tot in de puntjes wordt uitgewerkt. En ondanks dat het <i>science fiction</i> wordt genoemd,
+                            kunnen die aannames heel anders en verrassend zijn: wat zou er bijvoorbeeld gebeuren als het verhaal over de Toren van Babel echt zou zijn?
+                            Of wat als de mensheid in de toekomst voorbij wordt gestreefd door genetisch verbeterde "meta-humans"? Of als engelen echt bestaan en je geloof op de proef stellen met wonderen en rampen?
+                            In sommige verhalen, zoals het titelverhaal, pakt dit heel goed uit. In andere minder, zoals het verhaal "72 letters" waarin een 19e-eeuws Engeland wordt geschetst
+                            waarin automata bestaan die "bezield" kunnen worden door ze een naam te geven
+                            (met een heel duidelijke link naar <a href="https://nl.wikipedia.org/wiki/Golem_(legende)" target="_blank">het verhaal van de Golem</a>).
+                            In dit laatste verhaal probeert Chiang (te) veel best wel complexe dingen te vertellen, wat de leesbaarheid en het leesplezier niet ten goede komt.
+                            Het is overigens bijzonder te noemen dat een auteur met een Taiwanees-Chinese achtergrond voor zoveel verhalen een oudtestamentisch of joods uitgangspunt neemt.</p>
+                            <p>Een gevarieerde bundel met superoriginele en -intelligente verhalen, waarvan sommige fantastisch uitpakken en andere minder.
+                            En uiteraard heeft ons aller Bart ook over dit boek <a href="https://mandarin.nl/boeken/2025/stories-of-your-life.html" target="_blank">een eigen recensie</a> geschreven.</p>
+                        </div>
+                        <button class="toggle-btn" onclick="togglePost(this)">
+                            <span class="arrow">&#9660;</span>
+                            <span class="btn-text">Lees meer</span>
+                        </button>
                     </div>
                 </section>
 
-
-                <section class="post">
+                <section class="post" id="book3">
                     <header class="post-header">
-                        <a id="book3"></a>
                         <h3 class="post-title">#3 The Mountain in the Sea (Ray Nayler)</h3>
                         <p class="post-meta">3 juli 2025 bij Erik in Paterswolde</p>
                         <p class="post-meta">Aanwezig: Bart, Jan, Jolanda, Linda en Erik</p>
                         <p class="post-meta">Oordeel over het boek: <b>gemengd</b> (zie hieronder)</p>
                     </header>
                     <div class="post-description">
-                        <p>The Mountain in the Sea is een rijk boek, gevuld met diverse thema's en maar liefst drie verhaallijnen (die pas helemaal op het einde samenkomen).
-                        Het speelt in een redelijke nabije toekomst. In een afgeschermde lagune in het huidige Vietnam wordt een octopus-soort ontdekt
-                        die een voor mensen herkenbare vorm van intelligentie heeft ontwikkeld. Ze gebruiken symbolen en kunnen daar zelfs een soort taal mee vormen.
-                        Hiermee kunnen ze kennis doorgeven aan de volgende generatie, wat essentieel is omdat octopussen vrij kort leven.
-                        De hoofdpersoon, dr. Ha Nguyen, probeert <i>first contact</i> te maken met deze wezens.
-                        Ondertussen liggen er grote bedrijven en andere organisaties op de loer om met deze ontdekking aan de haal te gaan.</p>
-                        <p>Zoals gezegd zijn er meer verhaallijnen: we volgen ook de jonge Japanner Eiko die tot slaaf gemaakt is aan boord van een door AI aangedreven vistrawler,
-                        en een Russische hacker die probeert in te breken in het brein van 's werelds eerste androïde, Evrim.
-                        Pas helemaal aan het einde komen de lijnen samen in een soort episch eindgevecht, waarbij de octopussen ook nog eens toeslaan en zich tegen de mensen keren.
-                        Dit is meteen ook een belangrijk punt van kritiek: heel veel gebeurt pas op het einde en het nut van de extra verhaallijnen is beperkt.
-                        Misschien is het omdat het Naylers debuut is, maar ons inziens had hij er beter drie losse boeken (of één boek en twee korte verhalen) van kunnen maken.
-                        Ook de intermezzo's, citaten uit (fictionele) boeken van dr. Nguyen en het hoofd van de multinational DIANIMA dr. Mínervudóttir-Chan (wat een naam),
-                        gingen sommigen na een tijdje op de zenuwen werken.</p>
-                        <p>Het belangrijkste thema is intelligentie. Wanneer kun je daarvan spreken? Hoe kun je vaststellen of iets niets-menselijks, zoals een octopus of een androïde,
-                        intelligent is?
-                        Ook het geheugen komt veel aan bod. De androïde Evrim kan niets vergeten en juist dat maakt hem onmenselijk.
-                        Eiko gebruikt de eeuwenoude techniek van het Geheugenpaleis om niets te vergeten van zijn ontvoering en helse tocht aan boord van de <i>Sea Wolf</i>.</p>
-                        <p>Kortom: een interessant maar overvol boek, dat eigenlijk teveel probeert te vertellen.</p>
-                        <p>Ook over dit boek heeft Bart <a href="https://mandarin.nl/boeken/2025/the-mountain-in-the-sea.html" target="_blank">een uitgebreide recensie</a> geschreven,
-                        met veel aandacht voor niet-menselijke intelligentie en ons (on)vermogen om ons daar een beeld van te kunnen vormen.</p>
+                        <div class="post-preview">The Mountain in the Sea is een rijk boek, gevuld met diverse thema's en maar liefst drie verhaallijnen (die pas helemaal op het einde samenkomen). Het speelt in een redelijke nabije toekomst...</div>
+                        <div class="post-full" style="display: none;">
+                            <p>The Mountain in the Sea is een rijk boek, gevuld met diverse thema's en maar liefst drie verhaallijnen (die pas helemaal op het einde samenkomen).
+                            Het speelt in een redelijke nabije toekomst. In een afgeschermde lagune in het huidige Vietnam wordt een octopus-soort ontdekt
+                            die een voor mensen herkenbare vorm van intelligentie heeft ontwikkeld. Ze gebruiken symbolen en kunnen daar zelfs een soort taal mee vormen.
+                            Hiermee kunnen ze kennis doorgeven aan de volgende generatie, wat essentieel is omdat octopussen vrij kort leven.
+                            De hoofdpersoon, dr. Ha Nguyen, probeert <i>first contact</i> te maken met deze wezens.
+                            Ondertussen liggen er grote bedrijven en andere organisaties op de loer om met deze ontdekking aan de haal te gaan.</p>
+                            <p>Zoals gezegd zijn er meer verhaallijnen: we volgen ook de jonge Japanner Eiko die tot slaaf gemaakt is aan boord van een door AI aangedreven vistrawler,
+                            en een Russische hacker die probeert in te breken in het brein van 's werelds eerste androïde, Evrim.
+                            Pas helemaal aan het einde komen de lijnen samen in een soort episch eindgevecht, waarbij de octopussen ook nog eens toeslaan en zich tegen de mensen keren.
+                            Dit is meteen ook een belangrijk punt van kritiek: heel veel gebeurt pas op het einde en het nut van de extra verhaallijnen is beperkt.
+                            Misschien is het omdat het Naylers debuut is, maar ons inziens had hij er beter drie losse boeken (of één boek en twee korte verhalen) van kunnen maken.
+                            Ook de intermezzo's, citaten uit (fictionele) boeken van dr. Nguyen en het hoofd van de multinational DIANIMA dr. Mínervudóttir-Chan (wat een naam),
+                            gingen sommigen na een tijdje op de zenuwen werken.</p>
+                            <p>Het belangrijkste thema is intelligentie. Wanneer kun je daarvan spreken? Hoe kun je vaststellen of iets niets-menselijks, zoals een octopus of een androïde,
+                            intelligent is?
+                            Ook het geheugen komt veel aan bod. De androïde Evrim kan niets vergeten en juist dat maakt hem onmenselijk.
+                            Eiko gebruikt de eeuwenoude techniek van het Geheugenpaleis om niets te vergeten van zijn ontvoering en helse tocht aan boord van de <i>Sea Wolf</i>.</p>
+                            <p>Kortom: een interessant maar overvol boek, dat eigenlijk teveel probeert te vertellen.</p>
+                            <p>Ook over dit boek heeft Bart <a href="https://mandarin.nl/boeken/2025/the-mountain-in-the-sea.html" target="_blank">een uitgebreide recensie</a> geschreven,
+                            met veel aandacht voor niet-menselijke intelligentie en ons (on)vermogen om ons daar een beeld van te kunnen vormen.</p>
+                        </div>
+                        <button class="toggle-btn" onclick="togglePost(this)">
+                            <span class="arrow">&#9660;</span>
+                            <span class="btn-text">Lees meer</span>
+                        </button>
                     </div>
                 </section>
 
-                <section class="post">
+                <section class="post" id="book2">
                     <header class="post-header">
-                        <a id="book2"></a>
                         <h3 class="post-title">#2 Klara and the Sun (Kazuo Ishiguro)</h3>
                         <p class="post-meta">17 april 2025 bij Evert in Groningen-Zuid</p>
                         <p class="post-meta">Aanwezig: Evert, Jolanda, Linda en Erik</p>
                         <p class="post-meta">Oordeel over het boek: <b>positief</b></p>
                     </header>
                     <div class="post-description">
-                        <p>Een subtiel opgebouwd boek dat draait om de vraag wat het betekent om mens te zijn.
-                        Daarbij komen thema's als kunstmatige intelligentie, eugenetica, religie en vriendschap om de hoek kijken.
-			            Het verhaal wordt verteld vanuit het standpunt van een 'Artificial Friend' (AF) genaamd Klara.
-                        Zij is een scherp observator en leert zo veel over het gedrag van mensen.
-                        Klara staat te koop in een winkel vol met AF's en wordt op een dag meegenomen door het meisje Josie en haar moeder.
-                        Josie is ziekelijk en in eerste instantie krijgen we het idee dat Klara is uitgekozen om Josie gezelschap te houden.
-                        Dan blijkt gaandeweg dat de moeder, door Klara consequent 'the Mother genoemd', heel andere plannen heeft met Klara.
-                        Ondertussen heeft Klara een soort religie ontwikkeld die draait om de Zon (wat niet gek is voor een robot die een accu op zonlicht heeft).
-                        Klara hoopt dat de Zon Josie wil genezen, al beseft ze dat dat een offer zal vragen.
-                        Grappig is dat dit boek voor velen van ons het eerste boek was dat ze lazen dat door een Nobelprijswinnaar is geschreven!
-                        Een ander boek van Ishiguro, 'The Remains of the Day', was wel bekend maar vooral vanwege <a href="https://www.imdb.com/title/tt0107943/" target="_blank">de verfilming met o.a. Anthony Hopkins</a>.</p>
-			            <p>Een korte tijd later heeft Bart ook van dit boek een <a href="https://mandarin.nl/boeken/2025/klara-and-the-sun.html" target="_blank">recensie</a> geschreven.</p>
+                        <div class="post-preview">Een subtiel opgebouwd boek dat draait om de vraag wat het betekent om mens te zijn. Daarbij komen thema's als kunstmatige intelligentie, eugenetica, religie en vriendschap om de hoek kijken...</div>
+                        <div class="post-full" style="display: none;">
+                            <p>Een subtiel opgebouwd boek dat draait om de vraag wat het betekent om mens te zijn.
+                            Daarbij komen thema's als kunstmatige intelligentie, eugenetica, religie en vriendschap om de hoek kijken.
+                            Het verhaal wordt verteld vanuit het standpunt van een 'Artificial Friend' (AF) genaamd Klara.
+                            Zij is een scherp observator en leert zo veel over het gedrag van mensen.
+                            Klara staat te koop in een winkel vol met AF's en wordt op een dag meegenomen door het meisje Josie en haar moeder.
+                            Josie is ziekelijk en in eerste instantie krijgen we het idee dat Klara is uitgekozen om Josie gezelschap te houden.
+                            Dan blijkt gaandeweg dat de moeder, door Klara consequent 'the Mother genoemd', heel andere plannen heeft met Klara.
+                            Ondertussen heeft Klara een soort religie ontwikkeld die draait om de Zon (wat niet gek is voor een robot die een accu op zonlicht heeft).
+                            Klara hoopt dat de Zon Josie wil genezen, al beseft ze dat dat een offer zal vragen.
+                            Grappig is dat dit boek voor velen van ons het eerste boek was dat ze lazen dat door een Nobelprijswinnaar is geschreven!
+                            Een ander boek van Ishiguro, 'The Remains of the Day', was wel bekend maar vooral vanwege <a href="https://www.imdb.com/title/tt0107943/" target="_blank">de verfilming met o.a. Anthony Hopkins</a>.</p>
+                            <p>Een korte tijd later heeft Bart ook van dit boek een <a href="https://mandarin.nl/boeken/2025/klara-and-the-sun.html" target="_blank">recensie</a> geschreven.</p>
+                        </div>
+                        <button class="toggle-btn" onclick="togglePost(this)">
+                            <span class="arrow">&#9660;</span>
+                            <span class="btn-text">Lees meer</span>
+                        </button>
                     </div>
                 </section>
 
-                <section class="post">
+                <section class="post" id="book1">
                     <header class="post-header">
-                        <a id="book1"></a>
                         <h3 class="post-title">#1 2001: A Space Oddysey (Arthur C. Clarke)</h3>
                         <p class="post-meta">27 februari 2025 bij Bart in Garrelsweer</p>
                         <p class="post-meta">Aanwezig: Bart, Nienke, Evert en Erik</p>
                         <p class="post-meta">Oordeel over het boek: <b>positief</b></p>
                     </header>
                     <div class="post-description">
-                        <p>Een strak geschreven en vooruitziend science fiction-boek dat een nieuw licht werpt op de minstens zo bekende <a href="https://www.imdb.com/title/tt0062622" target="_blank">verfilming</a> ervan.
-                        Bart heeft er een mooie <a href="https://mandarin.nl/boeken/2025/#2001-space-odyssey" target="_blank">recensie</a> over geschreven.</p>
+                        <div class="post-preview">Een strak geschreven en vooruitziend science fiction-boek dat een nieuw licht werpt op de minstens zo bekende verfilming ervan. Bart heeft er een mooie recensie over geschreven...</div>
+                        <div class="post-full" style="display: none;">
+                            <p>Een strak geschreven en vooruitziend science fiction-boek dat een nieuw licht werpt op de minstens zo bekende <a href="https://www.imdb.com/title/tt0062622" target="_blank">verfilming</a> ervan.
+                            Bart heeft er een mooie <a href="https://mandarin.nl/boeken/2025/#2001-space-odyssey" target="_blank">recensie</a> over geschreven.</p>
+                        </div>
+                        <button class="toggle-btn" onclick="togglePost(this)">
+                            <span class="arrow">&#9660;</span>
+                            <span class="btn-text">Lees meer</span>
+                        </button>
                     </div>
                 </section>
             </div>
@@ -150,5 +186,27 @@
             <footer></footer>
         </div>
     </div>
+
+    <script>
+        function togglePost(button) {
+            const postDescription = button.parentElement;
+            const preview = postDescription.querySelector('.post-preview');
+            const full = postDescription.querySelector('.post-full');
+            const arrow = button.querySelector('.arrow');
+            const btnText = button.querySelector('.btn-text');
+
+            if (full.style.display === 'none') {
+                preview.style.display = 'none';
+                full.style.display = 'block';
+                arrow.innerHTML = '&#9650;';
+                btnText.textContent = 'Lees minder';
+            } else {
+                preview.style.display = 'block';
+                full.style.display = 'none';
+                arrow.innerHTML = '&#9660;';
+                btnText.textContent = 'Lees meer';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -29,8 +29,7 @@ h3 {
 
 .header {
     text-align: center;
-    top: auto;
-    margin: 3em auto;
+    padding: 2em 1.5em;
 }
 
 .sidebar {
@@ -44,10 +43,18 @@ h3 {
 }
 .brand-title {
     text-transform: uppercase;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
 }
 .brand-tagline {
     font-weight: 300;
     color: rgb(176, 202, 219);
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.nav {
+    margin-top: 2em;
 }
 
 .nav-list {
@@ -56,21 +63,23 @@ h3 {
     list-style: none;
 }
 .nav-item {
-    display: inline-block;
-    zoom: 1;
+    display: block;
+    margin: 0.5em 0;
 }
 .nav-item a {
+    display: block;
     background: transparent;
     border: 2px solid rgb(176, 202, 219);
-    /*color: #fff;*/
-    margin-top: 1em;
+    color: #fff;
+    padding: 0.5em 1em;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 85%;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
 }
 .nav-item a:hover,
 .nav-item a:focus {
     border: 2px solid rgb(61, 146, 201);
+    background: rgba(61, 146, 201, 0.2);
     text-decoration: none;
 }
 
@@ -90,7 +99,13 @@ h3 {
 
 .post {
     padding-bottom: 2em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2em;
 }
+.post:last-child {
+    border-bottom: none;
+}
+
 .post-title {
     font-size: 2em;
     color: #222;
@@ -104,12 +119,48 @@ h3 {
 .post-description {
     font-family: Georgia, "Cambria", serif;
     color: #444;
-    /*line-height: 1.8em;*/
+    line-height: 1.6em;
 }
 .post-meta {
     color: #999;
     font-size: 90%;
     margin: 0;
+}
+
+.post-preview {
+    color: #444;
+    margin-top: 1em;
+}
+
+.post-full {
+    transition: all 0.3s ease;
+}
+
+.toggle-btn {
+    background: transparent;
+    color: rgb(61, 146, 201);
+    border: 2px solid rgb(61, 146, 201);
+    padding: 0.6em 1.2em;
+    margin-top: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.toggle-btn:hover {
+    border: 2px solid rgb(41, 126, 181);
+    color: rgb(41, 126, 181);
+    background: rgba(61, 146, 201, 0.1);
+    transform: translateY(-2px);
+}
+
+.toggle-btn .arrow {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
 }
 
 .post-category {
@@ -154,26 +205,56 @@ h3 {
     background: none;
 }
 
-@media (min-width: 48em) {
-    .content {
-        padding: 2em 3em 0;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 75%;
-    }
+/* Responsive Design */
+/* Override PureCSS grid for custom breakpoint */
+.sidebar,
+.content {
+    width: 100%;
+}
 
-    .header {
-        margin: 80% 2em 0;
-        text-align: right;
-    }
-
+@media (min-width: 1280px) {
     .sidebar {
         position: fixed;
         top: 0;
         bottom: 0;
+        left: 0;
+        width: 20% !important;
+        overflow-y: auto;
+    }
+
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 20%;
+        width: 80% !important;
+    }
+
+    .header {
+        margin: 0;
+        padding: 2em 1.5em;
     }
 
     .footer {
         text-align: center;
+    }
+}
+
+@media (max-width: 1279px) {
+    .sidebar {
+        position: relative;
+        width: 100% !important;
+    }
+
+    .content {
+        width: 100% !important;
+        margin-left: 0;
+    }
+
+    .nav-item {
+        display: inline-block;
+        margin: 0.5em;
+    }
+
+    .nav-item a {
+        font-size: 0.75em;
     }
 }
