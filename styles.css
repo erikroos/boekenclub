@@ -193,6 +193,65 @@ h3 {
     text-shadow: 0 1px 1px #333;
 }
 
+/* Suggestie-formulier en leeslijst */
+.suggest-form {
+    max-width: 40em;
+    margin-top: 1em;
+}
+.suggest-form label {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    margin-top: 0.8em;
+}
+.suggest-form input[type="text"],
+.suggest-form input[type="url"] {
+    width: 100%;
+    max-width: 100%;
+}
+.label-optional {
+    color: #888;
+    font-weight: normal;
+    font-size: 0.85em;
+}
+.hp-field {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.alert {
+    padding: 0.8em 1em;
+    border-radius: 4px;
+    margin: 1em 0;
+    font-family: Georgia, "Cambria", serif;
+}
+.alert-success {
+    background: #e6f4ea;
+    border: 1px solid #5aba59;
+    color: #1e5a2e;
+}
+.alert-error {
+    background: #fdecea;
+    border: 1px solid #df2d4f;
+    color: #7a1527;
+}
+.alert ul {
+    margin: 0.3em 0 0 1.2em;
+    padding: 0;
+}
+
+.suggest-table {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.nav-item-cta a {
+    border-color: rgb(61, 146, 201) !important;
+    background: rgba(61, 146, 201, 0.2) !important;
+}
+
 .footer {
     padding: 1em 0;
 }
