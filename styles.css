@@ -252,6 +252,81 @@ h3 {
     background: rgba(61, 146, 201, 0.2) !important;
 }
 
+/* Admin-sectie */
+.admin-wrap {
+    max-width: 60em;
+    margin: 2em auto;
+    padding: 0 1.5em;
+    font-family: Georgia, "Cambria", serif;
+    color: #333;
+}
+.admin-wrap h1 {
+    font-weight: 100;
+    font-size: 2em;
+    color: #222;
+    margin: 0 0 0.2em;
+}
+.admin-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1em;
+    margin-bottom: 1.5em;
+}
+.admin-meta {
+    color: #888;
+    font-size: 0.9em;
+    margin: 0.2em 0 0;
+}
+.admin-form label {
+    color: #444;
+    margin-top: 0.8em;
+}
+.admin-form input[type="text"],
+.admin-form input[type="number"],
+.admin-form input[type="date"],
+.admin-form input[type="password"],
+.admin-form textarea {
+    width: 100%;
+    max-width: 100%;
+}
+.admin-form textarea {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+}
+.admin-form .html-editor {
+    min-height: 20em;
+}
+.admin-form .form-actions {
+    margin-top: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.admin-table {
+    width: 100%;
+}
+.admin-actions {
+    white-space: nowrap;
+}
+.admin-actions a,
+.admin-actions .link-button {
+    margin-right: 0.4em;
+}
+.inline-form {
+    display: inline;
+}
+.link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: rgb(61, 146, 201);
+    cursor: pointer;
+    font: inherit;
+    text-decoration: none;
+}
+.link-button:hover {
+    text-decoration: underline;
+}
+
 .footer {
     padding: 1em 0;
 }

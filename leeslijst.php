@@ -4,22 +4,6 @@ declare(strict_types=1);
 session_start();
 require __DIR__ . '/includes/db.php';
 
-/**
- * Formatteert een datum/tijd-string als "5 februari 2026" (Nederlandse maandnaam).
- */
-function format_date_nl(string $datetime): string
-{
-    static $months = [
-        'januari', 'februari', 'maart', 'april', 'mei', 'juni',
-        'juli', 'augustus', 'september', 'oktober', 'november', 'december',
-    ];
-    $ts = strtotime($datetime);
-    if ($ts === false) {
-        return '';
-    }
-    return (int) date('j', $ts) . ' ' . $months[(int) date('n', $ts) - 1] . ' ' . date('Y', $ts);
-}
-
 // --- CSRF-token en captcha voorbereiden -------------------------------------
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -180,7 +164,7 @@ try {
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="index.html" class="pure-button">&larr; Terug naar de bijeenkomsten</a>
+                            <a href="index.php" class="pure-button">&larr; Terug naar de bijeenkomsten</a>
                         </li>
                     </ul>
                 </nav>

@@ -44,3 +44,19 @@ function e(?string $value): string
 {
     return htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
+
+/**
+ * Formatteert een datum/tijd-string als "5 februari 2026" (Nederlandse maandnaam).
+ */
+function format_date_nl(string $datetime): string
+{
+    static $months = [
+        'januari', 'februari', 'maart', 'april', 'mei', 'juni',
+        'juli', 'augustus', 'september', 'oktober', 'november', 'december',
+    ];
+    $ts = strtotime($datetime);
+    if ($ts === false) {
+        return '';
+    }
+    return (int) date('j', $ts) . ' ' . $months[(int) date('n', $ts) - 1] . ' ' . date('Y', $ts);
+}
