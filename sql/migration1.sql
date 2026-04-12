@@ -1,5 +1,5 @@
 -- Migration 1: admin-authenticatie en recensies
--- Voer uit met: mysql -u root boekenclub < migration1.sql
+-- Voer uit met: mysql -u root boekenclub < sql/migration1.sql
 
 USE boekenclub;
 

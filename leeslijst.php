@@ -15,7 +15,7 @@ if (!isset($_SESSION['captcha_a'], $_SESSION['captcha_b'])) {
 
 $errors  = [];
 $success = false;
-$old     = ['name' => '', 'title' => '', 'author' => '', 'url' => ''];
+$old     = ['name' => '', 'title' => '', 'author' => '', 'url' => '', 'pages' => ''];
 
 // --- Formulier verwerken ----------------------------------------------------
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -51,7 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title  = trim((string) ($_POST['title']  ?? ''));
     $author = trim((string) ($_POST['author'] ?? ''));
     $url    = trim((string) ($_POST['url']    ?? ''));
-    $old    = compact('name', 'title', 'author', 'url');
+    $pages  = trim((string) ($_POST['pages']  ?? ''));
+    $old    = compact('name', 'title', 'author', 'url', 'pages');
 
     // Alleen zichtbare tekens toestaan (geen control chars)
     foreach (['name' => $name, 'title' => $title, 'author' => $author, 'url' => $url] as $key => $val) {
@@ -80,6 +81,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Auteur is te lang (max. 255 tekens).';
     }
 
+    // Aantal pagina's is optioneel, maar als ingevuld moet het een positief geheel getal zijn
+    $pagesValue = null;
+    if ($pages !== '') {
+        if (!preg_match('/^\d+$/', $pages)) {
+            $errors[] = 'Aantal pagina\'s moet een positief geheel getal zijn.';
+        } else {
+            $pagesInt = (int) $pages;
+            if ($pagesInt < 1 || $pagesInt > 65535) {
+                $errors[] = 'Aantal pagina\'s moet tussen 1 en 65535 liggen.';
+            } else {
+                $pagesValue = $pagesInt;
+            }
+        }
+    }
+
     // URL is optioneel, maar als ingevuld moet het een geldige http(s)-URL zijn
     if ($url !== '') {
         if (mb_strlen($url) > 2048) {
@@ -98,14 +114,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         try {
             $stmt = get_db()->prepare(
-                'INSERT INTO book_suggestions (submitter_name, title, author, url)
-                 VALUES (:name, :title, :author, :url)'
+                'INSERT INTO book_suggestions (submitter_name, title, author, url, pages)
+                 VALUES (:name, :title, :author, :url, :pages)'
             );
             $stmt->execute([
                 ':name'   => $name,
                 ':title'  => $title,
                 ':author' => $author,
                 ':url'    => $url !== '' ? $url : null,
+                ':pages'  => $pagesValue,
             ]);
 
             $_SESSION['last_submit'] = $now;
@@ -132,7 +149,7 @@ $suggestions = [];
 $dbError     = null;
 try {
     $stmt = get_db()->query(
-        'SELECT submitter_name, title, author, url, created_at
+        'SELECT submitter_name, title, author, url, pages, created_at
          FROM book_suggestions
          ORDER BY created_at DESC'
     );
@@ -151,6 +168,11 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Leeslijst — HBO-ICT Boekenclub</title>
+    <meta property="og:title" content="Leeslijst — HBO-ICT Boekenclub">
+    <meta property="og:description" content="Draag een boek voor voor de HBO-ICT Boekenclub.">
+    <meta property="og:image" content="https://boekenclub.erikroos.org/images/open-book-icon.jpg">
+    <meta property="og:url" content="https://boekenclub.erikroos.org/leeslijst.php">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="/images/open-book-icon.jpg">
 </head>
 <body>
@@ -225,6 +247,11 @@ try {
                                    placeholder="https://..."
                                    value="<?= e($old['url']) ?>">
 
+                            <label for="pages">Aantal pagina's <span class="label-optional">(optioneel)</span></label>
+                            <input type="number" id="pages" name="pages" min="1" max="65535" step="1"
+                                   inputmode="numeric"
+                                   value="<?= e($old['pages']) ?>">
+
                             <label for="captcha">
                                 Even checken dat u geen robot bent:
                                 hoeveel is <?= (int) $_SESSION['captcha_a'] ?> + <?= (int) $_SESSION['captcha_b'] ?>?
@@ -256,6 +283,7 @@ try {
                                     <tr>
                                         <th>Titel</th>
                                         <th>Auteur</th>
+                                        <th>Pagina's</th>
                                         <th>Voorgedragen door</th>
                                         <th>Datum</th>
                                     </tr>
@@ -271,6 +299,7 @@ try {
                                                 <?php endif; ?>
                                             </td>
                                             <td><?= e($row['author']) ?></td>
+                                            <td><?= $row['pages'] !== null ? (int) $row['pages'] : '' ?></td>
                                             <td><?= e($row['submitter_name']) ?></td>
                                             <td><?= e(format_date_nl((string) $row['created_at'])) ?></td>
                                         </tr>

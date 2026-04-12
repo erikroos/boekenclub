@@ -21,6 +21,11 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="styles.css">
     <title>HBO-ICT Boekenclub</title>
+    <meta property="og:title" content="HBO-ICT Boekenclub">
+    <meta property="og:description" content="Een groep docenten bij de opleiding ICT van de Hanze met een voorliefde voor boeken die een raakvlak hebben met techniek.">
+    <meta property="og:image" content="https://boekenclub.erikroos.org/images/open-book-icon.jpg">
+    <meta property="og:url" content="https://boekenclub.erikroos.org/">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="/images/open-book-icon.jpg">
 </head>
 <body>

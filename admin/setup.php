@@ -12,7 +12,7 @@ try {
 } catch (Throwable $ex) {
     error_log('admin/setup: ' . $ex->getMessage());
     http_response_code(500);
-    exit('Database-fout. Controleer of migration1.sql is uitgevoerd en of includes/config.php klopt.');
+    exit('Database-fout. Controleer of sql/migration1.sql is uitgevoerd en of includes/config.php klopt.');
 }
 
 $errors  = [];
