@@ -35,6 +35,7 @@ try {
             <div class="header">
                 <h1 class="brand-title">HBO-ICT Boekenclub</h1>
                 <h2 class="brand-tagline">Wij zijn een groep docenten bij de opleiding ICT van de Hanze met een voorliefde voor boeken die een raakvlak hebben met techniek. Deze site biedt een overzicht van onze bijeenkomsten en de boeken die we besproken hebben. Veel leesplezier!</h2>
+                <p class="brand-tagline brand-tagline-sub">Deze site is onderdeel van <a href="https://erikroos.org">ErikRoos.org</a></p>
 
                 <nav class="nav">
                     <ul class="nav-list">
