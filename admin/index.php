@@ -48,6 +48,7 @@ if (isset($_GET['deleted'])) $flash = 'Recensie verwijderd.';
             <p class="admin-meta">
                 Ingelogd als <strong><?= e(current_admin_username()) ?></strong> ·
                 <a href="suggestions.php">voordrachten</a> ·
+                <a href="books.php">mijn boeken</a> ·
                 <a href="logout.php">uitloggen</a> ·
                 <a href="../index.php">naar de site</a>
             </p>

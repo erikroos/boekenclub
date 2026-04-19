@@ -331,6 +331,29 @@ h3 {
 .link-button:hover {
     text-decoration: underline;
 }
+.tabs {
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+.tab-active {
+    background: rgb(61, 146, 201);
+    color: #fff;
+}
+.tab-active:hover {
+    background: rgb(41, 126, 181);
+    color: #fff;
+}
+.book-search-form {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+.book-search-form input[type="text"] {
+    width: 20em;
+    max-width: 100%;
+}
 
 .footer {
     padding: 1em 0;
